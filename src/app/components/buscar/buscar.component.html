@@ -1,0 +1,24 @@
+<div class="container my-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-primary" type="button" id="button-addon1" (click)="buscarArtista(buscarPalabra.value)">Buscar</button>
+                </div>
+                <input type="search" class="form-control" placeholder="Ingresa tu busqueda" aria-label="Example text with button addon" aria-describedby="button-addon1" #buscarPalabra (keyup)="buscarArtista(buscarPalabra.value)">
+              </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col card-columns mt-3">
+            <div class="card" style="width: 18rem;" *ngFor="let item of buscar">
+                <img src="{{item.images | noimagen}}" class="card-img-top" alt="imagen">
+                <div class="card-body">
+                  <h5 class="card-title">{{item.name}}</h5>
+                  
+                </div>
+            </div>
+        </div> 
+        
+    </div>
+</div>
