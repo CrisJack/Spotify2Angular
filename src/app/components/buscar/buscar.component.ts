@@ -18,10 +18,19 @@ export class BuscarComponent implements OnInit {
 
   buscarArtista(palabra:string){
     this._servicio.buscarSpotify(palabra).subscribe((data:any) => {
-      // console.log(data);
+      console.log(data);
 
       this.buscar = data;
     });
   }
+
+  verArtist(item:any){
+    //console.log(item);
+    // this._ruta.navigate(['artist',])
+
+    
+  }
+
+
 
 }

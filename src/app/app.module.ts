@@ -20,6 +20,8 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
 import { from } from 'rxjs';
 import { NoimagenPipe } from './pipes/noimagen.pipe';
 
+import { ArtistComponent } from './components/artist/artist.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,8 @@ import { NoimagenPipe } from './pipes/noimagen.pipe';
     HomeComponent,
     BuscarComponent,
     PagenotfoundComponent,
-    NoimagenPipe
+    NoimagenPipe,    
+    ArtistComponent
   ],
   imports: [
     BrowserModule,

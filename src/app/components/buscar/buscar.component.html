@@ -11,13 +11,20 @@
     </div>
     <div class="row">
         <div class="col card-columns mt-3">
-            <div class="card" style="width: 18rem;" *ngFor="let item of buscar">
+            
+            <div class="card" (click)="verArtist(item.id)" style="width: 18rem;" *ngFor="let item of buscar">
+
+                
+                
                 <img src="{{item.images | noimagen}}" class="card-img-top" alt="imagen">
                 <div class="card-body">
                   <h5 class="card-title">{{item.name}}</h5>
+                  <p>{{item.id}}</p>
                   
                 </div>
+                
             </div>
+            
         </div> 
         
     </div>

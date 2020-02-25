@@ -17,7 +17,7 @@ export class SpotifyService {
    getQuery(query){
 
     const headers = new HttpHeaders ({
-      'Authorization' : 'Bearer BQCuPaJCia2MoIoyH-4mCMm_Ps5CUMtCuX6FV5hULId_jkFcRIVOL3ZfVUuJzMSTSFFUHr8dHjphdUNgewg'
+      'Authorization' : 'Bearer BQA2zvB3yTAkGn8gFlVqaD7W5DFzaSmAh_GaQ0rabdyxk0cHIuIY2UW4qbOnM1-XZC3sUwzfAfsNrmpm2hLH5G2mWHHer8z-m_lM7rT-GDAp3z3TV0tXpldW17JyGWWziFYk_bPgZBBqVXWqwj_TkgwUP9ptUEs'
     })
 
     const url ="https://api.spotify.com/v1";
@@ -29,12 +29,10 @@ export class SpotifyService {
    fspotify(){
     
     const url="/browse/new-releases";
-   return this.getQuery(url).pipe(map((data:any)=>data.albums.items))
-   }
+    return this.getQuery(url).pipe(map((data:any)=>data.albums.items))
 
-  
-  
-  
+    
+   }   
   
    buscarSpotify(palabra:string){   
 
@@ -43,6 +41,13 @@ export class SpotifyService {
 
    }
 
+    getArtist(item:any){
+      
+      //console.log(item);
+      const url="/artists/";
+      return this.getQuery(`${url}${item}`);
+
+   }
 
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from '../../servicio/spotify.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,16 +9,30 @@ import { SpotifyService } from '../../servicio/spotify.service';
 })
 export class HomeComponent implements OnInit {
  spotify:any [] = [];
+ artist:any = {};
 
-  constructor(private _servicio:SpotifyService) { 
+  constructor(private _servicio:SpotifyService, private _ruta:Router) { 
     this._servicio.fspotify().subscribe((data:any) => {
-      // console.log(data.albums.items);
+      //console.log(data);
 
       this.spotify= data;
     });
 
     
   }
+
+  verArtist(item:any){
+
+    // this._servicio.getArtist(item).subscribe((data:any)=>{
+
+    //   console.log(data);
+    //   this.artist=data;
+    // })
+    // //console.log(this.artist);
+   return this._ruta.navigate(['artist',item])
+
+  }
+  
 
   ngOnInit() {
   }
