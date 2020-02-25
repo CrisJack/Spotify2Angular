@@ -19,7 +19,7 @@ export class ArtistComponent implements OnInit {
 
       this._servicio.getArtist(params.item).subscribe((data:any)=>{
 
-        console.log(data);
+        //console.log(data);
         this.artist=data;
       })
     })  

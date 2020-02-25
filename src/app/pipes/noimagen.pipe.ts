@@ -7,7 +7,7 @@ export class NoimagenPipe implements PipeTransform {
 
   transform(value: any[]): string {
 
-    
+    console.log(value);
 
     if(value.length > 0){
       
