@@ -9,7 +9,8 @@ import { SpotifyService } from '../../servicio/spotify.service';
 })
 export class ArtistComponent implements OnInit {
 
-  artist:any = {}
+  artist:any = {};
+  tracks:any[] = [];
 
   constructor(private _ac:ActivatedRoute, private _servicio:SpotifyService) {
 
@@ -22,6 +23,15 @@ export class ArtistComponent implements OnInit {
         //console.log(data);
         this.artist=data;
       })
+
+      this._servicio.getTrack(params.item).subscribe((data:any)=>{
+        //console.log(data.tracks);
+
+        this.tracks=data.tracks;
+
+        console.log(this.tracks);
+      })
+
     })  
     
     
