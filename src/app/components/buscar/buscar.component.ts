@@ -10,19 +10,28 @@ import { Router } from '@angular/router';
 })
 export class BuscarComponent implements OnInit {
 
+  loading:boolean;
   buscar:any [] = [];
 
-  constructor(private _servicio:SpotifyService, private _ruta:Router)  { }
+  constructor(private _servicio:SpotifyService, private _ruta:Router)  {
+    
+  }
 
   ngOnInit() {
   }
 
+  
+
   buscarArtista(palabra:string){
+
+    this.loading=true;
+
     this._servicio.buscarSpotify(palabra).subscribe((data:any) => {
       //console.log(data);
 
       this.buscar = data;
       //console.log(this.buscar);
+      this.loading=false;
     });
   }
 

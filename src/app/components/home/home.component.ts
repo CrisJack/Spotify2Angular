@@ -8,14 +8,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+ 
+ loading:boolean;
  spotify:any [] = [];
  artist:any = {};
 
   constructor(private _servicio:SpotifyService, private _ruta:Router) { 
+
+    this.loading=true;
     this._servicio.fspotify().subscribe((data:any) => {
       //console.log(data);
 
       this.spotify= data;
+      this.loading=false;
     });
 
     

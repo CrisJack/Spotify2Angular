@@ -21,6 +21,7 @@ import { from } from 'rxjs';
 import { NoimagenPipe } from './pipes/noimagen.pipe';
 
 import { ArtistComponent } from './components/artist/artist.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { ArtistComponent } from './components/artist/artist.component';
     BuscarComponent,
     PagenotfoundComponent,
     NoimagenPipe,    
-    ArtistComponent
+    ArtistComponent, LoadingComponent
   ],
   imports: [
     BrowserModule,
